@@ -1,0 +1,22 @@
+{
+  "name": "logseq-linear",
+  "version": "0.1.0",
+  "description": "Linear integration for Logseq — link issues, create tickets, sync status",
+  "main": "dist/index.html",
+  "author": "Maxim Khomiakov",
+  "license": "MIT",
+  "logseq": {
+    "id": "logseq-linear",
+    "title": "LinSeq",
+    "icon": "./logo.png"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && cp logo.png dist/ && node -e \"const p=require('./package.json');p.main='index.html';delete p.scripts;delete p.devDependencies;require('fs').writeFileSync('dist/package.json',JSON.stringify(p,null,2))\""
+  },
+  "devDependencies": {
+    "@logseq/libs": "^0.0.17",
+    "typescript": "^5.4.0",
+    "vite": "^5.2.0"
+  }
+}
